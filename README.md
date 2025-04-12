@@ -15,7 +15,7 @@ Feedback-Ai is a powerful tool for eCommerce platforms that allows developers to
 - 📊 **Developer Dashboard App** built in Python (Tkinter + Matplotlib)
 
 ---
-
+```
 ## 🛠️ Tech Stack
 
 | Frontend     | HTML, CSS, JavaScript,ReactJs           |
@@ -24,8 +24,9 @@ Feedback-Ai is a powerful tool for eCommerce platforms that allows developers to
 | ML Model     | Scikit-learn (Logistic Regression)      |
 | ML Libraries | joblib,sklearn, pandas, Matplotlib      |
 | GUI Librares | Tkinter                                 |
----
 
+---
+```
 ## 🧠 How It Works
 
 1. Users submit product reviews on the website.
@@ -45,6 +46,7 @@ Feedback-Ai is a powerful tool for eCommerce platforms that allows developers to
 We use Logistic Regression trained on the publicly available Amazon Unlocked Mobile dataset from kaggle.
 The dataset is preprocessed to remove missing values and convert ratings to sentiments.
 ---
+```
 ## 📂 Folder Structure
  | Frontend
     |assests
@@ -67,7 +69,7 @@ The dataset is preprocessed to remove missing values and convert ratings to sent
 | product_review_analysis.py
    
 ---
-
+```
 ## 🧪 Run Locally
 
 1. **Clone the repo**
