@@ -1,11 +1,12 @@
+#using joblib library for loading pre-trained model
 import joblib
 
-# Load model artifacts
-model = joblib.load("model/model.pkl")
-vectorizer = joblib.load("model/vectorizer.pkl")
-label_encoder = joblib.load("model/label_encoder.pkl")
+# Loding the artifacts of the model
+model = joblib.load("model/model.pkl") #Loading the ML model
+vectorizer = joblib.load("model/vectorizer.pkl") #Loading the numerical values of text that were assigned to data used for training
+label_encoder = joblib.load("model/label_encoder.pkl") #Loading the mapping of Labels 
 
-# Aspect keywords
+# Providing a dictionary containing keywords that would help in judgement of a parameter 
 aspects_keywords = {
     "Pricing": ["price", "expensive", "cheap", "value", "cost"],
     "Build Quality": ["build", "material", "design", "durable"],
@@ -13,13 +14,16 @@ aspects_keywords = {
     "Battery": ["battery", "charging", "power", "backup", "life"]
 }
 
+#for classifiying the feedback reviews based on the sentiments being reflected
 def classify_sentiments(reviews):
-    predictions = model.predict(vectorizer.transform(reviews))
+    predictions = model.predict(vectorizer.transform(reviews))  #conversion for text to number in IT-IDF
     sentiments = label_encoder.inverse_transform(predictions)
-    return list(zip(reviews, sentiments))
+    return list(zip(reviews, sentiments)) #returning the reviews with corresponding predicted sentiment
+
+# analyzing the code for aspects_keywords
 
 def get_aspect_sentiments(reviews):
-    aspect_scores = {k: [] for k in aspects_keywords}
+    aspect_scores = {k: [] for k in aspects_keywords} 
 
     for review in reviews:
         sentiment_num = model.predict(vectorizer.transform([review]))[0]
@@ -33,4 +37,4 @@ def get_aspect_sentiments(reviews):
         for aspect, scores in aspect_scores.items()
     }
 
-    return average
+    return average #returning the average
