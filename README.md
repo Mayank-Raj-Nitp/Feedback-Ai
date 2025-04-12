@@ -7,7 +7,7 @@ Feedback-Ai is a powerful tool for eCommerce platforms that allows developers to
 
 ## 🚀 Features
 
-- 🛍️ **Ecommerce Website** with product listing and review submission
+- 🛍️ **Ecommerce Website** with product listing and review submission -: DEPLOYMENT LINK -: https://myshoppinghub-drab.vercel.app/
 - 💬 **User Reviews** stored in MongoDB
 - 🤖 **AI-Powered Sentiment Analysis** using Logistic Regression (trained on Amazon Mobile dataset from kaggle)
 - 📈 **Aspect-Based Insights**: Price, Battery, Gaming, Build Quality
@@ -46,7 +46,26 @@ We use Logistic Regression trained on the publicly available Amazon Unlocked Mob
 The dataset is preprocessed to remove missing values and convert ratings to sentiments.
 ---
 ## 📂 Folder Structure
-
+ | Frontend
+    |assests
+    |index.html
+    |product.html
+    |script.js
+    |styles.css
+ | sentiment dashboard
+    |db
+        |db_config.py
+    |model
+        |label_encoder.pkl
+        |model.pkl
+        |vectorizer.pkl
+    |utils
+         |sentiment_utils.py
+    |app.py
+    |requirements.txt
+    |seed_data.py
+| product_review_analysis.py
+   
 ---
 
 ## 🧪 Run Locally
