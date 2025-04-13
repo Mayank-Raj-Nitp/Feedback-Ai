@@ -13,10 +13,10 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 #Processing the webpage
 
-def scrape_reviews(url, product_id=None, max_reviews=200):#Function for scraping data from websites
+def scrape_reviews(url, product_id=None, max_reviews=200):
     print("🔍 Starting to scrape reviews...")
-    reviews = []  #for storing scraped reviews
-    page = 1 #To navigate pages
+    reviews = [] 
+    page = 1 
     while len(reviews) < max_reviews:
         print(f"➡️ Fetching page {page}...")
         p_url = f"{url}?page={page}"#Creating a pagnited url to traverse different pages
@@ -103,7 +103,6 @@ def get_product_id(product_name, inventory):
             return item['product_id']
     return None
 
-# Example
 if __name__ == "__main__":
     product_name = "iPhone 16"
     t_url = "https://www.trustpilot.com/review/www.apple.com"
