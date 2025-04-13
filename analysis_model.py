@@ -9,14 +9,14 @@ import joblib
 # Loading the CSV file containg feedback data into pandas dataframe for training and testing
 df = pd.read_csv("Amazon_UnlocKed_Mobile.csv") 
 
-# Preprocessing data to useful format
 
-# Removing any row from the dataframe with empty "Reviews" and "Rating" column
+
+# Data cleaning
 df = df.dropna(subset=['Reviews', 'Rating'])
 
-# Converting feedback rating into string format for preprocessing
+# Converting feedback rating into string 
 
-def rating_to_sentiment(rating): #function for performing the conversion
+def rating_to_sentiment(rating):
     try:
         rating = float(rating)
     except:
@@ -28,20 +28,19 @@ def rating_to_sentiment(rating): #function for performing the conversion
     else:
         return "negative"
 
-#Performing the conversion and saving new data into column named "Sentiment" in pandas dataframe
+#Performing the conversion and saving new data 
 
 df['Sentiment'] = df['Rating'].apply(rating_to_sentiment)
 df = df.dropna(subset=['Sentiment']) #Removing row where conversion fails 
 
 # Defining Features and Labels
-X = df['Reviews'] #Features ("will be used for training the model")
-y = df['Sentiment'] #Label ("will be used by model for prediction after training")
+X = df['Reviews']
+y = df['Sentiment'] 
 
-# Converting string in the feedback to numbers using TF-IDF and eliminating stopwords i.e frequently occuring words that don't contribute to overall meaning
+
 vectorizer = TfidfVectorizer(stop_words='english', max_features=5000)
 vectorizer.fit(X)  # Learn vocabulary and IDF
-X_tfidf = vectorizer.transform(X)  # Transform text into TF-IDF vectors
-
+X_tfidf = vectorizer.transform(X) 
 # Fit the label encoder to learn the mapping
 label_encoder = LabelEncoder()
 label_encoder.fit(y)
