@@ -64,9 +64,15 @@ The dataset is preprocessed to remove missing values and convert ratings to sent
     |utils
          |sentiment_utils.py
     |app.py
+    |feature.py
+    |data.py
     |requirements.txt
     |seed_data.py
-| product_review_analysis.py
+| flask_backend
+    |app.py
+    |db_config.py
+    |requriments.txt
+| analysis_model.py
    
 ---
 ```
