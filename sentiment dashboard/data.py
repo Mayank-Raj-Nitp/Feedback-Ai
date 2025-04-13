@@ -1,0 +1,28 @@
+sample_reviews = [
+    {"product_id": "P101", "review": "Battery life is amazing"},
+    {"product_id": "P101", "review": "Great for gaming, no lag"},
+    {"product_id": "P101", "review": "Not worth the price"},
+    {"product_id": "P102", "review": "Cheap plastic build"},
+    {"product_id": "P102", "review": "Design is solid and premium"},
+    {"product_id": "P102", "review": "Battery drains quickly"},
+    {"product_id": "P103", "review": "Battery life is amazing"},
+    {"product_id": "P103", "review": "Great for gaming, no lag"},
+    {"product_id": "P103", "review": "Not worth the price"},
+    {"product_id": "P104", "review": "Cheap plastic build"},
+    {"product_id": "P104", "review": "Design is solid and premium"},
+    {"product_id": "P104", "review": "Battery drains quickly"},
+    {"product_id": "P105", "review": "Battery life is amazing"},
+    {"product_id": "P105", "review": "Great for gaming, no lag"},
+    {"product_id": "P105", "review": "Not worth the price"},
+    {"product_id": "P106", "review": "Cheap plastic build"},
+    {"product_id": "P106", "review": "Design is solid and premium"},
+    {"product_id": "P106", "review": "Battery drains quickly"},
+    {"product_id": "P107", "review": "Battery life is amazing"},
+    {"product_id": "P107", "review": "Great for gaming, no lag"},
+    {"product_id": "P107", "review": "Not worth the price"},
+    {"product_id": "P108", "review": "Cheap plastic build"},
+    {"product_id": "P108", "review": "Design is solid and premium"},
+    {"product_id": "P108", "review": "Battery drains quickly"},
+]
+product_ids = list({r['product_id'] for r in sample_reviews})
+
