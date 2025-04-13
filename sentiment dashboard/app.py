@@ -11,7 +11,7 @@ from features import scrape_reviews, analyze_reviews, generate_analytics, get_pr
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
-# Example inventory used to match product names
+
 inventory = [
     {"product_id": "P101", "name": "iPhone 16"},
     {"product_id": "P102", "name": "iPhone 15"},
@@ -89,11 +89,9 @@ def analyze_online_reviews(product_id):
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
-# Global placeholder for the chart canvas so we can remove the old one before drawing new
 chart_canvas = None
 
 def draw_aspect_chart(aspect_sentiments):
-    # Extract aspects and scores
     aspects = list(aspect_sentiments.keys())
     values = [aspect_sentiments[a] if aspect_sentiments[a] is not None else 0 for a in aspects]
 
@@ -101,7 +99,7 @@ def draw_aspect_chart(aspect_sentiments):
     ax.bar(aspects, values, color="skyblue")
     ax.set_title("Aspect-wise Sentiment Analysis")
     ax.set_ylabel("Sentiment Score")
-    ax.set_ylim(0, 1)  # Optional: Clamp values between 0 and 1
+    ax.set_ylim(0, 1) 
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
@@ -138,7 +136,7 @@ card_frame = scrollable_frame
 # Load buttons
 load_products()
 
-# Right panel
+# Right area
 right_frame = Frame(root, bg="white")
 right_frame.pack(side="right", fill="both", expand=True)
 
